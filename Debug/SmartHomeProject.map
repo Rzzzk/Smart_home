@@ -460,9 +460,9 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .stab          0x00002328      0x1c8 ./main.o
                                 0x42c (size before relaxing)
 
-.stabstr        0x00000000      0xf3f
+.stabstr        0x00000000      0xf2d
  *(.stabstr)
- .stabstr       0x00000000      0xf3f ./SRV/src/EEPROM_serv.o
+ .stabstr       0x00000000      0xf2d ./SRV/src/EEPROM_serv.o
 
 .stab.excl
  *(.stab.excl)

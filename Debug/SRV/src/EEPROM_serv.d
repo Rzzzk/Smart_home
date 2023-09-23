@@ -1,16 +1,16 @@
 SRV/src/EEPROM_serv.o SRV/src/EEPROM_serv.o: ../SRV/src/EEPROM_serv.c \
-  D:\COURCES\CAT\final\ project\SmartHomeProject\LIB/stdTypes.h \
-  D:\COURCES\CAT\final\ project\SmartHomeProject\LIB/commonMacros.h \
-  D:\COURCES\CAT\final\ project\SmartHomeProject\LIB/errorStates.h \
-  D:\COURCES\CAT\final\ project\SmartHomeProject\HAL\include/EEPROM_int.h \
-  D:\COURCES\CAT\final\ project\SmartHomeProject\SRV\inc/EEPROM_serv.h
+  C:\Users\Hp\Desktop\repo_cat\Smart_home\LIB/stdTypes.h \
+  C:\Users\Hp\Desktop\repo_cat\Smart_home\LIB/commonMacros.h \
+  C:\Users\Hp\Desktop\repo_cat\Smart_home\LIB/errorStates.h \
+  C:\Users\Hp\Desktop\repo_cat\Smart_home\HAL\include/EEPROM_int.h \
+  C:\Users\Hp\Desktop\repo_cat\Smart_home\SRV\inc/EEPROM_serv.h
 
-D:\COURCES\CAT\final\ project\SmartHomeProject\LIB/stdTypes.h:
+C:\Users\Hp\Desktop\repo_cat\Smart_home\LIB/stdTypes.h:
 
-D:\COURCES\CAT\final\ project\SmartHomeProject\LIB/commonMacros.h:
+C:\Users\Hp\Desktop\repo_cat\Smart_home\LIB/commonMacros.h:
 
-D:\COURCES\CAT\final\ project\SmartHomeProject\LIB/errorStates.h:
+C:\Users\Hp\Desktop\repo_cat\Smart_home\LIB/errorStates.h:
 
-D:\COURCES\CAT\final\ project\SmartHomeProject\HAL\include/EEPROM_int.h:
+C:\Users\Hp\Desktop\repo_cat\Smart_home\HAL\include/EEPROM_int.h:
 
-D:\COURCES\CAT\final\ project\SmartHomeProject\SRV\inc/EEPROM_serv.h:
+C:\Users\Hp\Desktop\repo_cat\Smart_home\SRV\inc/EEPROM_serv.h:
