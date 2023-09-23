@@ -64,14 +64,14 @@
 #define PA_PIN7_VAL    LOW
 
 
-#define PB_PIN0_VAL    HIGH
-#define PB_PIN1_VAL    HIGH
-#define PB_PIN2_VAL    HIGH
-#define PB_PIN3_VAL    HIGH
-#define PB_PIN4_VAL    HIGH
-#define PB_PIN5_VAL    HIGH
-#define PB_PIN6_VAL    HIGH
-#define PB_PIN7_VAL    HIGH
+#define PB_PIN0_VAL    LOW
+#define PB_PIN1_VAL    LOW
+#define PB_PIN2_VAL    LOW
+#define PB_PIN3_VAL    LOW
+#define PB_PIN4_VAL    LOW
+#define PB_PIN5_VAL    LOW
+#define PB_PIN6_VAL    LOW
+#define PB_PIN7_VAL    LOW
 
 
 #define PC_PIN0_VAL    HIGH

@@ -1,5 +1,9 @@
 Archive member included because of file (symbol)
 
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                              ./HAL/src/LCD_prog.o (__udivmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                              ./HAL/src/LCD_prog.o (__divmodhi4)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o (exit)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
@@ -49,6 +53,7 @@ LOAD ./SRV/src/EEPROM_serv.o
 LOAD ./MCAL/src/DIO_prog.o
 LOAD ./MCAL/src/TWI_prog.o
 LOAD ./HAL/src/EEPROM_prog.o
+LOAD ./HAL/src/LCD_prog.o
 LOAD ./main.o
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
@@ -144,7 +149,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x254c
+.text           0x00000000     0x41ee
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
                 0x00000000                __vectors
@@ -223,7 +228,10 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text          0x00000082        0x0 ./MCAL/src/DIO_prog.o
  .text          0x00000082        0x0 ./MCAL/src/TWI_prog.o
  .text          0x00000082        0x0 ./HAL/src/EEPROM_prog.o
+ .text          0x00000082        0x0 ./HAL/src/LCD_prog.o
  .text          0x00000082        0x0 ./main.o
+ .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
  .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  .text          0x00000082       0x58 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
                 0x00000082                __fixunssfsi
@@ -262,84 +270,135 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x0000144a      0x3b0 ./SRV/src/EEPROM_serv.o
                 0x0000144a                EEPROM_enuAddUser
  .text.EEPROM_enuRemoveAdmin
-                0x000017fa       0x2c ./SRV/src/EEPROM_serv.o
+                0x000017fa       0x7a ./SRV/src/EEPROM_serv.o
                 0x000017fa                EEPROM_enuRemoveAdmin
  .text.EEPROM_enuRemoveUser
-                0x00001826       0x2c ./SRV/src/EEPROM_serv.o
-                0x00001826                EEPROM_enuRemoveUser
+                0x00001874       0x80 ./SRV/src/EEPROM_serv.o
+                0x00001874                EEPROM_enuRemoveUser
+ .text.EEPROM_enuGetAdminLocation
+                0x000018f4       0x68 ./SRV/src/EEPROM_serv.o
+                0x000018f4                EEPROM_enuGetAdminLocation
+ .text.EEPROM_enuGetUserLocation
+                0x0000195c       0x6c ./SRV/src/EEPROM_serv.o
+                0x0000195c                EEPROM_enuGetUserLocation
+ .text.EEPROM_enuInit
+                0x000019c8      0x66e ./SRV/src/EEPROM_serv.o
+                0x000019c8                EEPROM_enuInit
  .text.DIO_enuInit
-                0x00001852       0x56 ./MCAL/src/DIO_prog.o
-                0x00001852                DIO_enuInit
+                0x00002036       0x54 ./MCAL/src/DIO_prog.o
+                0x00002036                DIO_enuInit
  .text.DIO_enuSetPortDirection
-                0x000018a8       0x9a ./MCAL/src/DIO_prog.o
-                0x000018a8                DIO_enuSetPortDirection
+                0x0000208a       0x9a ./MCAL/src/DIO_prog.o
+                0x0000208a                DIO_enuSetPortDirection
  .text.DIO_enuSetPortValue
-                0x00001942       0x9a ./MCAL/src/DIO_prog.o
-                0x00001942                DIO_enuSetPortValue
+                0x00002124       0x9a ./MCAL/src/DIO_prog.o
+                0x00002124                DIO_enuSetPortValue
  .text.DIO_enuTogPort
-                0x000019dc       0xac ./MCAL/src/DIO_prog.o
-                0x000019dc                DIO_enuTogPort
+                0x000021be       0xac ./MCAL/src/DIO_prog.o
+                0x000021be                DIO_enuTogPort
  .text.DIO_enuGetPortValue
-                0x00001a88       0xbe ./MCAL/src/DIO_prog.o
-                0x00001a88                DIO_enuGetPortValue
+                0x0000226a       0xbe ./MCAL/src/DIO_prog.o
+                0x0000226a                DIO_enuGetPortValue
  .text.DIO_enuSetPinDirection
-                0x00001b46      0x1dc ./MCAL/src/DIO_prog.o
-                0x00001b46                DIO_enuSetPinDirection
+                0x00002328      0x1dc ./MCAL/src/DIO_prog.o
+                0x00002328                DIO_enuSetPinDirection
  .text.DIO_enuSetPinValue
-                0x00001d22      0x1dc ./MCAL/src/DIO_prog.o
-                0x00001d22                DIO_enuSetPinValue
+                0x00002504      0x1dc ./MCAL/src/DIO_prog.o
+                0x00002504                DIO_enuSetPinValue
  .text.DIO_enuTogPin
-                0x00001efe      0x122 ./MCAL/src/DIO_prog.o
-                0x00001efe                DIO_enuTogPin
+                0x000026e0      0x122 ./MCAL/src/DIO_prog.o
+                0x000026e0                DIO_enuTogPin
  .text.DIO_enuGetPinValue
-                0x00002020      0x138 ./MCAL/src/DIO_prog.o
-                0x00002020                DIO_enuGetPinValue
+                0x00002802      0x138 ./MCAL/src/DIO_prog.o
+                0x00002802                DIO_enuGetPinValue
  .text.TWI_enuInitMaster
-                0x00002158       0x38 ./MCAL/src/TWI_prog.o
-                0x00002158                TWI_enuInitMaster
+                0x0000293a       0x38 ./MCAL/src/TWI_prog.o
+                0x0000293a                TWI_enuInitMaster
  .text.TWI_enuInitSlave
-                0x00002190       0x2a ./MCAL/src/TWI_prog.o
-                0x00002190                TWI_enuInitSlave
+                0x00002972       0x2a ./MCAL/src/TWI_prog.o
+                0x00002972                TWI_enuInitSlave
  .text.TWI_enuMasterSendStartCondition
-                0x000021ba       0x46 ./MCAL/src/TWI_prog.o
-                0x000021ba                TWI_enuMasterSendStartCondition
+                0x0000299c       0x46 ./MCAL/src/TWI_prog.o
+                0x0000299c                TWI_enuMasterSendStartCondition
  .text.TWI_enuSendReapeatedStart
-                0x00002200       0x46 ./MCAL/src/TWI_prog.o
-                0x00002200                TWI_enuSendReapeatedStart
+                0x000029e2       0x46 ./MCAL/src/TWI_prog.o
+                0x000029e2                TWI_enuSendReapeatedStart
  .text.TWI_enuSendSlaveAddressWithWriteReq
-                0x00002246       0x54 ./MCAL/src/TWI_prog.o
-                0x00002246                TWI_enuSendSlaveAddressWithWriteReq
+                0x00002a28       0x54 ./MCAL/src/TWI_prog.o
+                0x00002a28                TWI_enuSendSlaveAddressWithWriteReq
  .text.TWI_enuSendSlaveAddressWithReadReq
-                0x0000229a       0x5c ./MCAL/src/TWI_prog.o
-                0x0000229a                TWI_enuSendSlaveAddressWithReadReq
+                0x00002a7c       0x5c ./MCAL/src/TWI_prog.o
+                0x00002a7c                TWI_enuSendSlaveAddressWithReadReq
  .text.TWI_enuMasterWriteDataByte
-                0x000022f6       0x52 ./MCAL/src/TWI_prog.o
-                0x000022f6                TWI_enuMasterWriteDataByte
+                0x00002ad8       0x52 ./MCAL/src/TWI_prog.o
+                0x00002ad8                TWI_enuMasterWriteDataByte
  .text.TWI_enuMasterReadDataByte
-                0x00002348       0x5c ./MCAL/src/TWI_prog.o
-                0x00002348                TWI_enuMasterReadDataByte
+                0x00002b2a       0x5c ./MCAL/src/TWI_prog.o
+                0x00002b2a                TWI_enuMasterReadDataByte
  .text.TWI_enuMasterSendStopCondition
-                0x000023a4       0x2e ./MCAL/src/TWI_prog.o
-                0x000023a4                TWI_enuMasterSendStopCondition
+                0x00002b86       0x2e ./MCAL/src/TWI_prog.o
+                0x00002b86                TWI_enuMasterSendStopCondition
  .text.EEPROM_enuWriteDataByte
-                0x000023d2       0x54 ./HAL/src/EEPROM_prog.o
-                0x000023d2                EEPROM_enuWriteDataByte
+                0x00002bb4       0x54 ./HAL/src/EEPROM_prog.o
+                0x00002bb4                EEPROM_enuWriteDataByte
  .text.EEPROM_enuReadDataByte
-                0x00002426       0x64 ./HAL/src/EEPROM_prog.o
-                0x00002426                EEPROM_enuReadDataByte
- .text.main     0x0000248a       0x50 ./main.o
-                0x0000248a                main
- .text.libgcc   0x000024da        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000024da       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x000024da                __prologue_saves__
- .text.libgcc   0x00002512       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00002512                __epilogue_restores__
- .text.libgcc   0x00002548        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
-                0x00002548                . = ALIGN (0x2)
+                0x00002c08       0x64 ./HAL/src/EEPROM_prog.o
+                0x00002c08                EEPROM_enuReadDataByte
+ .text.LCD_enuInit
+                0x00002c6c      0x6a6 ./HAL/src/LCD_prog.o
+                0x00002c6c                LCD_enuInit
+ .text.LCD_enuDisplayChar
+                0x00003312       0x2c ./HAL/src/LCD_prog.o
+                0x00003312                LCD_enuDisplayChar
+ .text.LCD_enuSendCommand
+                0x0000333e       0x2c ./HAL/src/LCD_prog.o
+                0x0000333e                LCD_enuSendCommand
+ .text.LCD_invidSendCommand
+                0x0000336a      0x4a0 ./HAL/src/LCD_prog.o
+ .text.LCD_vidLatch
+                0x0000380a      0x496 ./HAL/src/LCD_prog.o
+ .text.LCD_enuDisplayString
+                0x00003ca0       0x6a ./HAL/src/LCD_prog.o
+                0x00003ca0                LCD_enuDisplayString
+ .text.LCD_enuGoToRowCol
+                0x00003d0a       0x8e ./HAL/src/LCD_prog.o
+                0x00003d0a                LCD_enuGoToRowCol
+ .text.LCD_enuDisplayNumber
+                0x00003d98       0xd8 ./HAL/src/LCD_prog.o
+                0x00003d98                LCD_enuDisplayNumber
+ .text.LCD_enuClear
+                0x00003e70       0x20 ./HAL/src/LCD_prog.o
+                0x00003e70                LCD_enuClear
+ .text.LCD_enuDisplayStringRowCol
+                0x00003e90       0x3c ./HAL/src/LCD_prog.o
+                0x00003e90                LCD_enuDisplayStringRowCol
+ .text.LCD_enuCreateCharacter
+                0x00003ecc       0x6a ./HAL/src/LCD_prog.o
+                0x00003ecc                LCD_enuCreateCharacter
+ .text.LCD_enuDisplayBinary
+                0x00003f36       0xa6 ./HAL/src/LCD_prog.o
+                0x00003f36                LCD_enuDisplayBinary
+ .text.LCD_enuDisplayNumber_4Digit
+                0x00003fdc       0x84 ./HAL/src/LCD_prog.o
+                0x00003fdc                LCD_enuDisplayNumber_4Digit
+ .text.main     0x00004060       0xce ./main.o
+                0x00004060                main
+ .text.libgcc   0x0000412e       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x0000412e                __udivmodhi4
+ .text.libgcc   0x00004156       0x26 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                0x00004156                __divmodhi4
+                0x00004156                _div
+ .text.libgcc   0x0000417c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x0000417c       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x0000417c                __prologue_saves__
+ .text.libgcc   0x000041b4       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x000041b4                __epilogue_restores__
+ .text.libgcc   0x000041ea        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x000041ea                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00002548        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00002548                exit
-                0x00002548                _exit
+ .fini9         0x000041ea        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000041ea                exit
+                0x000041ea                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -358,11 +417,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00002548        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x000041ea        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000254c                _etext = .
+                0x000041ee                _etext = .
 
-.data           0x00800060        0x8 load address 0x0000254c
+.data           0x00800060        0x8 load address 0x000041ee
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
@@ -370,7 +429,10 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .data          0x00800060        0x0 ./MCAL/src/DIO_prog.o
  .data          0x00800060        0x0 ./MCAL/src/TWI_prog.o
  .data          0x00800060        0x0 ./HAL/src/EEPROM_prog.o
+ .data          0x00800060        0x0 ./HAL/src/LCD_prog.o
  .data          0x00800060        0x0 ./main.o
+ .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
@@ -403,7 +465,10 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .bss           0x00800068        0x0 ./MCAL/src/DIO_prog.o
  .bss           0x00800068        0x0 ./MCAL/src/TWI_prog.o
  .bss           0x00800068        0x0 ./HAL/src/EEPROM_prog.o
+ .bss           0x00800068        0x0 ./HAL/src/LCD_prog.o
  .bss           0x00800068        0x0 ./main.o
+ .bss           0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
  .bss           0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  .bss           0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
  .bss           0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
@@ -422,8 +487,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.bss*)
  *(COMMON)
                 0x00800068                PROVIDE (__bss_end, .)
-                0x0000254c                __data_load_start = LOADADDR (.data)
-                0x00002554                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000041ee                __data_load_start = LOADADDR (.data)
+                0x000041f6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800068        0x0
                 0x00800068                PROVIDE (__noinit_start, .)
@@ -448,21 +513,23 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x24f0
+.stab           0x00000000     0x41b8
  *(.stab)
- .stab          0x00000000      0xfe4 ./SRV/src/EEPROM_serv.o
- .stab          0x00000fe4      0xa14 ./MCAL/src/DIO_prog.o
+ .stab          0x00000000     0x1728 ./SRV/src/EEPROM_serv.o
+ .stab          0x00001728      0xa14 ./MCAL/src/DIO_prog.o
                                 0xac8 (size before relaxing)
- .stab          0x000019f8      0x690 ./MCAL/src/TWI_prog.o
+ .stab          0x0000213c      0x690 ./MCAL/src/TWI_prog.o
                                 0x744 (size before relaxing)
- .stab          0x00002088      0x2a0 ./HAL/src/EEPROM_prog.o
+ .stab          0x000027cc      0x2a0 ./HAL/src/EEPROM_prog.o
                                 0x354 (size before relaxing)
- .stab          0x00002328      0x1c8 ./main.o
-                                0x42c (size before relaxing)
+ .stab          0x00002a6c     0x14f4 ./HAL/src/LCD_prog.o
+                               0x1734 (size before relaxing)
+ .stab          0x00003f60      0x258 ./main.o
+                                0x4bc (size before relaxing)
 
-.stabstr        0x00000000      0xf3f
+.stabstr        0x00000000     0x12af
  *(.stabstr)
- .stabstr       0x00000000      0xf3f ./SRV/src/EEPROM_serv.o
+ .stabstr       0x00000000     0x12af ./SRV/src/EEPROM_serv.o
 
 .stab.excl
  *(.stab.excl)
