@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../HAL/src/EEPROM_prog.c 
+../HAL/src/EEPROM_prog.c \
+../HAL/src/LCD_prog.c 
 
 OBJS += \
-./HAL/src/EEPROM_prog.o 
+./HAL/src/EEPROM_prog.o \
+./HAL/src/LCD_prog.o 
 
 C_DEPS += \
-./HAL/src/EEPROM_prog.d 
+./HAL/src/EEPROM_prog.d \
+./HAL/src/LCD_prog.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

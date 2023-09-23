@@ -167,26 +167,94 @@ ES_t EEPROM_enuAddUser(EEPROM_Handler_t *Copy_pstrEEPROMHandler , AdminORuser_t*
 
 
 /*
- * remove admin in system
+ * remove admin from the system
  */
-ES_t EEPROM_enuRemoveAdmin(EEPROM_Handler_t *Copy_pstrEEPROMHandler , AdminORuser_t* Copy_pstrAdmin)
+ES_t EEPROM_enuRemoveAdmin(EEPROM_Handler_t *Copy_pstrEEPROMHandler , u8 Copy_u8AdminId )
 {
 	ES_t Local_enuErrState=ES_NOK;
+
+
+	for(u8 i=0 ; i<20 ; i++)
+	{
+		if(Copy_pstrEEPROMHandler->AdminID[i] == Copy_u8AdminId )
+		{
+			Copy_pstrEEPROMHandler->AdminID[i] = 0;
+			Copy_pstrEEPROMHandler->AdminPAS[i] = 0;
+			Local_enuErrState=ES_OK;
+		}
+	}
 
 	return Local_enuErrState;
 }
 
 /*
- * remove user in system
+ * remove user from the system
  */
-ES_t EEPROM_enuRemoveUser(EEPROM_Handler_t *Copy_pstrEEPROMHandler , AdminORuser_t* Copy_pstrUser)
+ES_t EEPROM_enuRemoveUser(EEPROM_Handler_t *Copy_pstrEEPROMHandler , u8 Copy_u8UserId)
 {
 	ES_t Local_enuErrState=ES_NOK;
+
+	for(u8 i=20 ; i<60 ; i++)
+	{
+		if(Copy_pstrEEPROMHandler->UserID[i] == Copy_u8UserId )
+		{
+			Copy_pstrEEPROMHandler->UserID[i] = 0;
+			Copy_pstrEEPROMHandler->UserPAS[i] = 0;
+			Local_enuErrState=ES_OK;
+		}
+	}
 
 	return Local_enuErrState;
 }
 
+ES_t EEPROM_enuGetAdminLocation(EEPROM_Handler_t *Copy_pstrEEPROMHandler , u8 Copy_u8AdminId ,u8 *Copy_pu8Location)
+{
+	ES_t Local_enuErrState=ES_NOK;
 
 
+	for(u8 i=0 ; i<20 ; i++)
+	{
+		if(Copy_pstrEEPROMHandler->AdminID[i] == Copy_u8AdminId )
+		{
+			*Copy_pu8Location = i;
+			Local_enuErrState=ES_OK;
+		}
+	}
 
+	return Local_enuErrState;
+}
 
+ES_t EEPROM_enuGetUserLocation(EEPROM_Handler_t *Copy_pstrEEPROMHandler , u8 Copy_u8UserId ,u8 *Copy_pu8Location)
+{
+	ES_t Local_enuErrState=ES_NOK;
+
+	for(u8 i=20 ; i<60 ; i++)
+	{
+		if(Copy_pstrEEPROMHandler->UserID[i] == Copy_u8UserId )
+		{
+			*Copy_pu8Location = i;
+			Local_enuErrState=ES_OK;
+		}
+	}
+
+	return Local_enuErrState;
+}
+
+void EEPROM_enuInit(void)
+{
+	EEPROM_enuWriteDataByte(50,0); //admin0 id
+	_delay_ms(50);
+	EEPROM_enuWriteDataByte(11,20); //admin0 pass
+	_delay_ms(50);
+
+	EEPROM_enuWriteDataByte(92,40); //user0 id
+	_delay_ms(50);
+	EEPROM_enuWriteDataByte(15,60); // user0 pass
+	_delay_ms(50);
+
+	EEPROM_enuWriteDataByte(1,90); // number of admins
+	_delay_ms(50);
+	EEPROM_enuWriteDataByte(1,95); // number of users
+	_delay_ms(50);
+
+}

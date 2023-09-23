@@ -26,6 +26,7 @@ typedef struct
 }AdminORuser_t;
 
 
+void EEPROM_enuInit(void);
 
 /*
  * restore all data from EEPROM to the handler
@@ -47,12 +48,21 @@ ES_t EEPROM_enuAddUser(EEPROM_Handler_t *Copy_pstrEEPROMHandler , AdminORuser_t*
 /*
  * remove admin in system
  */
-ES_t EEPROM_enuRemoveAdmin(EEPROM_Handler_t *Copy_pstrEEPROMHandler , AdminORuser_t* Copy_pstrAdmin);
+ES_t EEPROM_enuRemoveAdmin(EEPROM_Handler_t *Copy_pstrEEPROMHandler , u8 Copy_u8AdminId );
 
 /*
  * remove user in system
  */
-ES_t EEPROM_enuRemoveUser(EEPROM_Handler_t *Copy_pstrEEPROMHandler , AdminORuser_t* Copy_pstrAdmin);
+ES_t EEPROM_enuRemoveUser(EEPROM_Handler_t *Copy_pstrEEPROMHandler , u8 Copy_u8UserId);
+
+/*
+ * get admin location
+ */
+ES_t EEPROM_enuGetAdminLocation(EEPROM_Handler_t *Copy_pstrEEPROMHandler , u8 Copy_u8AdminId ,u8 *Copy_pu8Location);
 
 
+/*
+ * get user location
+ */
+ES_t EEPROM_enuGetUserLocation(EEPROM_Handler_t *Copy_pstrEEPROMHandler , u8 Copy_u8AdminId ,u8 *Copy_pu8Location);
 #endif /* SRV_INC_EEPROM_SERV_H_ */
